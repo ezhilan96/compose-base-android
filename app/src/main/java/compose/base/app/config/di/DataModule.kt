@@ -1,0 +1,18 @@
+package compose.base.app.config.di
+
+import compose.base.app.data.repositoryImpl.AuthRepositoryImpl
+import compose.base.app.domain.repository.AuthRepository
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class DataModule {
+
+    @Binds
+    @Singleton
+    abstract fun bindAuthRepository(authRepository: AuthRepositoryImpl): AuthRepository
+}
