@@ -1,6 +1,10 @@
 package compose.base.app.presentation.ui.theme
 
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -73,9 +77,19 @@ val Typography = Typography(
     ),
 )
 
-val text_style_title = TextStyle(
-    fontFamily = FontFamily(Font(R.font.ubuntu_medium)),
-    fontStyle = FontStyle.Italic,
-    fontSize = 12.sp
+data class TextStyles(
+    val title: TextStyle = TextStyle(
+        fontFamily = FontFamily(Font(R.font.ubuntu_medium)),
+        fontStyle = FontStyle.Italic,
+        fontSize = 12.sp
+    )
 )
+
+val LocalTextStyle = compositionLocalOf { TextStyles() }
+
+val MaterialTheme.textStyle: TextStyles
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalTextStyle.current
+
 

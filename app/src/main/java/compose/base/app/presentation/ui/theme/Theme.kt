@@ -84,8 +84,7 @@ private val LightColorScheme = lightColorScheme(
 fun BaseAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
+    dynamicColor: Boolean = true, content: @Composable () -> Unit
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -107,7 +106,9 @@ fun BaseAppTheme(
 
     CompositionLocalProvider(
         LocalSpacing provides Spacing(),
-        LocalColors provides Colors()
+        LocalColors provides Colors(),
+        LocalTextStyle provides TextStyles(),
+        LocalCustomShapes provides CustomShapes(),
     ) {
         MaterialTheme(
             shapes = defaultShapes,
