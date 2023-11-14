@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
@@ -49,4 +50,15 @@ fun LoginScreen(
             Text(modifier = modifier.align(Alignment.Center), text = "Login")
         }
     }
+}
+
+@ExperimentalMaterial3Api
+@Preview
+@Composable
+fun LoginScreenPreview() {
+    LoginScreen(
+        modifier = Modifier,
+        uiEvent = {},
+        uiState = LoginUiState()
+    )
 }
