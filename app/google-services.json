@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "673003398106",
+    "firebase_url": "https://taxida-a9911.firebaseio.com",
+    "project_id": "compose-a9911",
+    "storage_bucket": "compose-a9911.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673003398106:android:8ee4dc827bbf8a311696e3",
+        "android_client_info": {
+          "package_name": "com.compose.base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673003398106-2l64na2p26q4pv43elrt0i6m5d2v37hb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDclglHcO2XGjG_7S8uKqyy-wnhOkljCrw"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}
