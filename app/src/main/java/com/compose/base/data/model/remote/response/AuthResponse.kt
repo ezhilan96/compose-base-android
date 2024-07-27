@@ -13,6 +13,6 @@ data class Data(
 data class OTPVerificationResponse(
     val id: Int,
     val token: String,
-    val name: String?,
+    val userName: String?,
     val phone: Long?,
 )

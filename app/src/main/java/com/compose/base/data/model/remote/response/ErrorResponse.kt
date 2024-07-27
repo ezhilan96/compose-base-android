@@ -1,5 +1,7 @@
 package com.compose.base.data.model.remote.response
 
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import okhttp3.ResponseBody
 
@@ -15,7 +17,7 @@ data class ErrorResponse(var error: Error?) {
                         }
                 }
             } catch (e: Exception) {
-                e.printStackTrace()
+                Firebase.crashlytics.recordException(e)
                 null
             }
         }

@@ -12,10 +12,10 @@ import androidx.compose.ui.unit.dp
 
 fun getDefaultShapes(sizeFactor: Float) = Shapes(
     extraSmall = ShapeDefaults.ExtraSmall.copy(CornerSize((sizeFactor * 4).dp)),
-    small = ShapeDefaults.Small.copy(CornerSize((sizeFactor * 8).dp)),
-    medium = ShapeDefaults.Medium.copy(CornerSize((sizeFactor * 12).dp)),
-    large = ShapeDefaults.Large.copy(CornerSize((sizeFactor * 16).dp)),
-    extraLarge = ShapeDefaults.ExtraLarge.copy(CornerSize((sizeFactor * 28).dp)),
+    small = ShapeDefaults.Small.copy(CornerSize((sizeFactor * 10).dp)),
+    medium = ShapeDefaults.Medium.copy(CornerSize((sizeFactor * 20).dp)),
+    large = ShapeDefaults.Large.copy(CornerSize((sizeFactor * 40).dp)),
+    extraLarge = ShapeDefaults.ExtraLarge.copy(CornerSize((sizeFactor * 50).dp)),
 )
 
 data class CustomShapes(

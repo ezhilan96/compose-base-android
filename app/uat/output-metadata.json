@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.taxida.driver",
+  "applicationId": "com.compose.base",
   "variantName": "uat",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 110,
-      "versionName": "3.0.65.UAT",
+      "versionCode": 122,
+      "versionName": "3.0.77.UAT",
       "outputFile": "app-uat.apk"
     }
   ],

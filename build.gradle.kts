@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.googleDevtoolsKsp) apply false
     alias(libs.plugins.googleGmsGoogleServices) apply false
     alias(libs.plugins.googleFirebaseCrashlytics) apply false
+    alias(libs.plugins.jetbrainsSerialization) apply false
 }

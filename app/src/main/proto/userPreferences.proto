@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.compose.base";
+option java_multiple_files = true;
+
+message UserPreferences {
+
+  bool loginStatus = 1;
+  UserData userData = 2;
+  AppConfig appConfig = 3;
+
+  message UserData {
+    int32 id = 1;
+    string name = 2;
+    int64 phone = 3;
+    string token = 4;
+  }
+
+  message AppConfig {
+    string googleApiKey = 1;
+    bool isForceUpdate = 2;
+    bool isPartialUpdate = 3;
+    int32 versionCode = 4;
+  }
+}

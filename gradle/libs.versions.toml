@@ -1,56 +1,60 @@
 [versions]
-agp = "8.4.0"
+agp = "8.5.0"
 kotlin = "1.9.23"
-googleServices = "4.4.1"
+googleServices = "4.4.2"
+jetbrainsSerialization = "1.7.10"
 hilt = "2.51.1"
 ksp = "1.9.23-1.0.19"
-crashlytics = "2.9.9"
+crashlytics = "3.0.2"
+protobuf = "0.9.1"
 coreKtx = "1.13.1"
 activityCompose = "1.9.0"
-navigationCompose = "2.7.7"
-lifecycleRuntimeKtx = "2.7.0"
-lifecycleRuntimeCompose = "2.7.0"
-kotlinxCoroutinesAndroid = "1.8.0"
-composeBom = "2024.05.00"
-firebaseBom = "33.0.0"
+navigationCompose = "2.8.0-beta05"
+lifecycleRuntime = "2.8.3"
+kotlinxCoroutinesAndroid = "1.8.1"
+composeBom = "2024.06.00"
+firebaseBom = "33.1.2"
 material = "1.12.0"
-camerax = "1.3.3"
+camerax = "1.3.4"
 hiltNavigation = "1.2.0"
 constraintlayout = "1.0.1"
-datastorePreferences = "1.1.1"
+protoDatastore = "1.1.1"
+googleProtobuf = "4.27.2"
 splashscreen = "1.0.1"
-playServiceLocation = "21.2.0"
+playServiceLocation = "21.3.0"
 appUpdate = "2.1.0"
 accompanistPermissions = "0.34.0"
 accompanistSystemUi = "0.34.0"
-#noinspection GradleDependency
-playServiceAuth = "20.7.0"
-playServiceAuthApiPhone = "18.0.2"
 retrofit = "2.11.0"
 okhttp = "5.0.0-alpha.14"
-coil = "2.6.0"
-socketIO = "2.1.0"
+coil = "2.7.0"
+socketIO = "2.1.1"
 drawbox = "1.0.3"
+serialization = "1.3.3"
+#noinspection GradleDependency
+playServiceAuth = "20.7.0"
+playServiceAuthApiPhone = "18.1.0"
+
 junit = "4.13.2"
-androidxJunit = "1.1.5"
-espressoCore = "3.5.1"
-androidxTestCore = "1.5.0"
-androidxTestCoreKtx = "1.5.0"
+androidxJunit = "1.2.1"
+espressoCore = "3.6.1"
+androidxTestCore = "1.6.1"
+androidxTestCoreKtx = "1.6.1"
 androidxArchCoreTesting = "2.2.0"
-jetbrainsKotlinxCoroutinesTest = "1.8.0"
-googleTruth = "1.4.2"
+jetbrainsKotlinxCoroutinesTest = "1.8.1"
+googleTruth = "1.4.4"
 squareupOkhttp3Mockwebserver = "4.12.0"
-mockk = "1.13.10"
+mockk = "1.13.12"
 hiltAndroidTesting = "2.51.1"
-androidxTestRunner = "1.5.2"
+androidxTestRunner = "1.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntime" }
 jetbrains-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -67,7 +71,8 @@ androidx-camera-camera2 = { group = "androidx.camera", name = "camera-camera2", 
 androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camerax" }
 androidx-camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camerax" }
 androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout" }
-androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastorePreferences" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "protoDatastore" }
+google-protobuf = { group = "com.google.protobuf", name = "protobuf-javalite", version.ref = "googleProtobuf" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
 google-android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 google-android-play-app-update = { group = "com.google.android.play", name = "app-update", version.ref = "appUpdate" }
@@ -85,6 +90,7 @@ squareup-okhttp3-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", ver
 squareup-okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 coil-kt-coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 socket-client = { group = "io.socket", name = "socket.io-client", version.ref = "socketIO" }
+jetbrains-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 ak1-drawbox = { group = "io.ak1", name = "drawbox", version.ref = "drawbox" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
@@ -109,3 +115,5 @@ googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref =
 googleDaggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 googleDevtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 googleFirebaseCrashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
+googleProtobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
+jetbrainsSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "jetbrainsSerialization" }

@@ -77,7 +77,8 @@
 -dontwarn org.jetbrains.annotations.**
 -keep class kotlin.Metadata { *; }
 
--keepclassmembers class my.models.package.** {
-  <init>(...);
-  <fields>;
+-keep class androidx.datastore.*.** {*;}
+
+-keepclassmembers class * extends com.google.protobuf.GeneratedMessageLite* {
+   <fields>;
 }

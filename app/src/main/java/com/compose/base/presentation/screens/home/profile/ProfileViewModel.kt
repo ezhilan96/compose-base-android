@@ -2,9 +2,8 @@ package com.compose.base.presentation.screens.home.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.compose.base.data.util.DataState
-import com.compose.base.domain.useCases.core.GetUserDetailsUseCase
-import com.compose.base.domain.useCases.user.LogoutUserUseCase
+import com.compose.base.data.util.DataResponse
+import com.compose.base.domain.useCases.user.UserActionsUseCase
 import com.compose.base.presentation.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,8 +24,7 @@ data class ProfileScreenUiState(
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    private val getUserDetails: GetUserDetailsUseCase,
-    private val logoutUser: LogoutUserUseCase,
+    private val userActions: UserActionsUseCase,
 ) : ViewModel() {
 
     private var _uiState = MutableStateFlow(ProfileScreenUiState())
@@ -35,7 +33,7 @@ class ProfileViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            getUserDetails().collect {
+            userActions.userDetails.collect {
                 it?.let {
                     _uiState.update { currentState ->
                         currentState.copy(
@@ -51,10 +49,10 @@ class ProfileViewModel @Inject constructor(
     fun onLogout() {
         _uiState.update { it.copy(isLoading = true) }
         viewModelScope.launch {
-            logoutUser().collect { dataState ->
-                if (dataState is DataState.Error) _uiState.update { currentState ->
+            userActions.logout().collect { dataResponse ->
+                if (dataResponse is DataResponse.Error) _uiState.update { currentState ->
                     currentState.copy(
-                        alertMessage = dataState.message,
+                        alertMessage = dataResponse.message,
                         enableAlert = true,
                         isLoading = false,
                     )

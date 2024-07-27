@@ -1,71 +1,54 @@
 <resources>
     <string name="app_name">Compose base</string>
 
+    <string name="app_url">https://api.%1$s/</string>
+    <string name="customer_url">https://%1$s/</string>
+    <string name="socket_url">https://location.%1$s/</string>
+
     <string name="uri_package">package:%1$s</string>
     <string name="url_google_map">http://maps.google.com/maps?daddr=%1$s,%2$s</string>
     <string name="google_map_query">google.navigation:q=%1$s,%2$s</string>
     <string name="google_map_package">com.google.android.apps.maps</string>
+    <string name="url_whatsapp">https://api.whatsapp.com/send?phone=%1$s</string>
 
     <string name="country_code">+91</string>
     <string name="phone_number">+91 %1$s</string>
+    <string name="unit_currency">₹</string>
+    <string name="unit_distance">km</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
-    <string name="notification_channel_id_alpha">alpha</string>
-    <string name="notification_channel_name_alpha">Alpha</string>
-    <string name="notification_channel_id_beta">beta</string>
-    <string name="notification_channel_name_beta">Beta</string>
+    <string name="notification_channel_id_live_tracking">liveTracking</string>
+    <string name="notification_channel_name_live_tracking">Live tracking</string>
+    <string name="notification_channel_id_booking">booking</string>
+    <string name="notification_channel_name_booking">Booking</string>
 
+    <string name="label_home">Home</string>
+    <string name="label_list">List</string>
+    <string name="label_history">History</string>
     <string name="label_otp">Enter OTP</string>
-    <string name="label_phone">Enter mobile number</string>
-    <string name="label_night_charge">Night charge</string>
-    <string name="label_no_show">No show</string>
+    <string name="label_id">ID</string>
     <string name="label_version">version %1$s</string>
-    <string name="label_base_fare">Base fare</string>
-    <string name="label_start_ride">Start ride</string>
-    <string name="label_complete">Complete</string>
-    <string name="label_pending">Pending</string>
-    <string name="label_accepted">Accepted</string>
-    <string name="label_assigned">Assigned</string>
-    <string name="label_driver_accepted">Driver accepted</string>
-    <string name="label_driver_rejected">Driver rejected</string>
-    <string name="label_en_route_to_pickup">En route to pickup</string>
-    <string name="label_arrived">Arrived</string>
-    <string name="label_on_trip">On trip</string>
-    <string name="label_cancelled">Cancelled</string>
-    <string name="label_completed">Completed</string>
-    <string name="label_on_bid">On bid</string>
-    <string name="label_operator_assigned">Operator assigned</string>
-    <string name="label_driver_assigned">Driver assigned</string>
-    <string name="label_empty_trip">Empty trip</string>
-    <string name="label_pending_for_approval">Pending for approval</string>
-    <string name="label_queued">Queued</string>
     <string name="label_search">Search</string>
     <string name="label_select">Select</string>
     <string name="label_init">Init</string>
-    <string name="label_confirmed">Confirmed</string>
-    <string name="label_broadcasted">Broadcasted</string>
-    <string name="label_invoiced">Invoiced</string>
-    <string name="label_pending_for_operator_assign">Pending for operator assign</string>
-    <string name="label_started">Started</string>
-    <string name="label_round_trip">Round trip</string>
-    <string name="label_one_way">One way</string>
-    <string name="label_multi_city">Multi city</string>
-    <string name="label_hourly_rental">Hourly rental</string>
-    <string name="label_local">Local</string>
-    <string name="label_office_pickup">Office pickup</string>
-    <string name="label_home_pickup">Home pickup</string>
+    <string name="label_phone">Enter mobile number</string>
 
     <string name="button_update">Update</string>
     <string name="button_disable_auto_read">Enter manually</string>
     <string name="button_retry">Retry</string>
     <string name="button_submit_phone">Send OTP</string>
     <string name="button_submit_otp">Verify OTP</string>
+    <string name="button_collected">Collected</string>
+    <string name="button_view">View</string>
     <string name="button_select_from_gallery">Select from gallery</string>
     <string name="button_take_photo">Take photo</string>
+    <string name="button_terms">Terms &amp; conditions</string>
+    <string name="button_privacy">Privacy policy</string>">
     <string name="button_logout">Logout</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_confirm">Confirm</string>
     <string name="button_submit">Submit</string>
     <string name="button_retake">Retake</string>
     <string name="button_select">Select</string>
@@ -83,27 +66,47 @@
     <string name="message_welcome_subnotes">Let’s get started!</string>
     <string name="message_phone">OTP will be sent to this number</string>
     <string name="message_verifying">Verifying…</string>
+    <string name="message_loading">Please wait…</string>
     <string name="message_otp_auto_read">Auto-reading OTP…</string>
+    <string name="message_signup">Thank you for signing up!</string>
     <string name="message_config_not_found">Unable to find app config.\ntry again later.</string>
     <string name="message_app_update">Please update the app to continue</string>
     <string name="message_app_block">The app is currently unavailable.\nPlease check back later.</string>
+    <string name="message_reject_confirmation">Are you sure you want to Reject?</string>
+    <string name="message_accept_confirmation">Are you sure you want to Accept?</string>
+    <string name="message_empty_list">Nothing yet!</string>
+    <string name="message_empty_list_subtext">Keep checking back for new updates</string>
+    <string name="message_list_end">That\'s all folks!</string>
+    <string name="message_fare_condition"><![CDATA[*Inclusive of tolls & airport charges]]></string>
+    <string name="message_0_commission">0% Commission</string>
+    <string name="message_collect_via_cash_upi">Collect via Cash/UPI</string>
     <string name="message_location_access_needed">Location Access Needed</string>
     <string name="message_location_permission_request">Location service is required for the app to work properly.\nPlease enable location to proceed further.</string>
+    <string name="message_enable_location_toast">Go to settings and enable location service.</string>
+    <string name="message_permission_request">App needs %1$s permission to proceed further.</string>
+    <string name="message_background_location_permission_request">App needs background location permission to proceed further.</string>
     <string name="message_otp_sent_successfully">OTP sent successfully</string>
+    <string name="message_documents_empty">Upload all documents</string>
     <string name="message_permission_instruction"><![CDATA[It seems you\'ve permanently declined permissions.\nYou must grant permissions from the app settings.\nGo to Settings > Apps > Compose base > Permissions >]]></string>
 
+    <string name="error_default">Invalid</string>
     <string name="error_phone_invalid">Invalid phone number</string>
     <string name="error_otp_invalid">Invalid OTP</string>
-    <string name="error_otp_timeout">OTP timeout! Try after %1$ss</string>
+    <string name="error_otp_timeout">OTP cooldown! Try after %1$ss</string>
     <string name="error_empty_signature">Signature can\'t be empty</string>
     <string name="error_phone_empty">Phone number can\'t be empty</string>
     <string name="error_otp_empty">OTP can\'t be empty</string>
     <string name="error_file_not_found">File not found!</string>
     <string name="error_invalid_image_url">Invalid image url!</string>
 
+    <string name="title_customer_signature">Customer signature</string>
+    <string name="title_booking_history">Booking history</string>
+    <string name="title_broadcasts">Broadcasts</string>
     <string name="title_permissions_required">Permissions required</string>
     <string name="title_permissions_declined_permanently">Permissions declined</string>
-    <string name="title_customer_signature">Customer signature</string>
+    <string name="title_background_permission_required">Background permission required</string>
+    <string name="title_select_picture">Select picture</string>
+    <string name="title_open_pdf">Open PDF</string>
     <string name="title_map">Open Map</string>
 
     <string name="body_time">%1$s:%2$s</string>
@@ -117,5 +120,13 @@
         <item quantity="one">%d hour</item>
         <item quantity="other">%d hours</item>
     </plurals>
+
+    <string-array name="cancellation_reason">
+        <item>I am not available</item>
+        <item>Not interested</item>
+        <item>Accepted by mistake</item>
+        <item>Found better offer</item>
+        <item>Others</item>
+    </string-array>
 
 </resources>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#141414</color>
-    <color name="background_variant">#FFFFFF</color>
+    <color name="black">#000</color>
+    <color name="dark">#141414</color>
+    <color name="white">#fff</color>
+    <color name="light">#f8f8f8</color>
+
+    <color name="background">#f8f8f8</color>
 </resources>

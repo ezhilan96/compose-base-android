@@ -4,6 +4,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
 import android.os.Build
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -16,12 +18,22 @@ enum class NetworkStatus {
     Connected, Losing, Lost, Unknown
 }
 
+/**
+ * Class responsible for observing network connectivity changes and emitting the status as a Flow.
+ *
+ * This class is injected with the ApplicationContext to access system services. It utilizes
+ * ConnectivityManager to register a NetworkCallback and observe network state changes.
+ */
 class NetworkStatusObserver @Inject constructor(@ApplicationContext context: Context) {
 
     private val connectivityManager =
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
-    private fun getNetworkStatusCallback(onConnectionChange: (NetworkStatus) -> Unit) =
+    /**
+     * Creates a NetworkCallback instance that calls the provided onConnectionChange function
+     * with the corresponding NetworkStatus update.
+     */
+    private fun getNetworkStatusCallback(onConnectionChange: (NetworkStatus) -> Unit): ConnectivityManager.NetworkCallback =
         object : ConnectivityManager.NetworkCallback() {
             override fun onAvailable(network: Network) {
                 super.onAvailable(network)
@@ -44,18 +56,30 @@ class NetworkStatusObserver @Inject constructor(@ApplicationContext context: Con
             }
         }
 
+    /**
+     * Returns a Flow that emits the current network status and subsequent changes.
+     *
+     * This method utilizes callbackFlow to establish a bi-directional communication channel.
+     * It creates a NetworkCallback and registers it with the ConnectivityManager. The callback
+     * updates the Flow with the new NetworkStatus whenever a change occurs. The flow is also
+     * configured to emit only distinct values (avoiding duplicates) using distinctUntilChanged.
+     */
     fun getNetworkStatus(): Flow<NetworkStatus> = callbackFlow {
 
-        val networkStatusCallback = getNetworkStatusCallback { launch { send(it) } }
+        // Create NetworkCallback and link it to the emitter
+        val networkStatusCallback: ConnectivityManager.NetworkCallback =
+            getNetworkStatusCallback { launch { send(it) } }
 
         try {
+            // Register the callback based on API level
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 connectivityManager.registerDefaultNetworkCallback(networkStatusCallback)
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            Firebase.crashlytics.recordException(e)
         }
 
+        // Cleanup callback on cancellation
         awaitClose {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 connectivityManager.unregisterNetworkCallback(networkStatusCallback)

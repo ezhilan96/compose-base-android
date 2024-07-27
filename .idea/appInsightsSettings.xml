@@ -8,7 +8,7 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.taxida.driver" />
+                  <option name="appId" value="co.nizetrip.driver" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
@@ -23,9 +23,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.compose.base" />
-                  <option name="mobileSdkAppId" value="1:673003398106:android:8ee4dc827bbf8a311696e3" />
-                  <option name="projectId" value="compose-a9911" />
-                  <option name="projectNumber" value="673003398106" />
+                  <option name="mobileSdkAppId" value="1:847992379800:android:5d7f0c857f0a2d0de473ed" />
+                  <option name="projectId" value="base-app-e7cc3" />
+                  <option name="projectNumber" value="847992379800" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
